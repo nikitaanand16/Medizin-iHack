@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+    <div class="shadow-lg" style="width: 80%; margin: 0 auto; background-color: white; padding: 20px 0;">
+    <div class="container">
+        <h1><strong><a href="#" style="color: rgb(0, 136, 169);" class="h1">#</a> Visualization of Attributes considered for Prediction</strong></h1>
+        <p class="text-muted h6">Published on March 31, 2020</p>
+        <br>
+        <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 1094px;">
+                <div class="card-body">
+                  <img src="{% static 'test.png' %}" style="width:100%;height:100%">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <form action="{% url 'diaresult' %}" method="POST">
+            {% csrf_token %}
+        	<div>     
+        	<br>
+            <button type="submit" id="submitForm" style="margin: center; margin-left: 43.5%">View Result</button>
+          	</div>
+         </form>
+      </div>   
+    </div>
+
+{% endblock %}

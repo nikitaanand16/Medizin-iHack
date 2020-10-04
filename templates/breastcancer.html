@@ -1,0 +1,127 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+<div class="shadow-lg" style="width: 80%; margin: 0 auto; background-color: white; padding: 20px 0;">
+    <div class="container">
+        <h1><strong><a href="#" style="color: rgb(0, 136, 169);" class="h1">#</a> Breast Cancer Early Signs and Symptoms</strong></h1>
+        <p class="text-muted h6">Published on March 31, 2020</p>
+        <hr class="my-4">
+        <div>
+                <p class="text-justify">Cancer occurs when changes called mutations take place in genes that regulate cell growth. The mutations let the cells divide and multiply in an uncontrolled way. Breast cancer is cancer that develops in breast cells. Typically, the cancer forms in either the lobules or the ducts of the breast. Lobules are the glands that produce milk, and ducts are the pathways that bring the milk from the glands to the nipple. 
+                    <div class="img-thumbnail bg-light" style="width: 400px; height: 100%; padding-bottom: 0; float: right; margin-left: 20px;">
+                        <a href="">
+                            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/unrecognizable-female-gynocologist-looking-at-a-royalty-free-image-1584383333.jpg?crop=0.668xw:1.00xh;0.216xw,0&resize=480:*" alt="Nature" style="width:100%">
+                            <div class="caption">
+                              <p style="color: black; margin: 10px; font-size: 16px;" class="text-justify">“You never know how strong you are until being strong is the only choice you have.” – Cayla Mills</p>
+                            </div>
+                        </a>
+                    </div>
+                </p>
+                <p class="text-justify">
+                    Breast cancer is the most frequent cancer among women, impacting 2.1 million women each year, and also causes the greatest number of cancer-related deaths among women.</p>
+                <p class="text-justify font-weight-bold">There are two types of breast cancer tumors:</p>
+                <ul style="padding: 0;">
+                <li style="color: #24252A;"><p class="text-justify"><strong>Type 1 Benign tumors</strong> aren’t cancerous. They won’t invade surrounding tissue or spread elsewhere.Even so, they can cause serious problems when they grow near vital organs, press on a nerve, or restrict blood flow. Benign tumors usually respond well to treatment.</p></li>
+                <li style="color: #24252A;"><p class="text-justify"><strong>Type 2 Malignant tumors</strong> are cancerous.Our bodies constantly produce new cells to replace old ones. Sometimes, DNA gets damaged in the process, so new cells develop abnormally. Instead of dying off, they continue to multiply faster than the immune system can handle, forming a tumor.</p></li>
+                </ul>
+                <p class="text-justify"><strong>Common breast cancer signs and symptoms include: </strong></p><p style="font-weight: normal;">
+                1. lump or swelling in the breast, upper chest or armpit – you might feel the lump but not see it
+                <br> 2. a change to the skin, such as puckering or dimpling
+                <br> 3. a change in the colour of the breast – the breast may look red or inflamed
+                <br> 4. a change to the nipple, for example it has become pulled in (inverted)
+                <br> 5. rash or crusting around the nipple
+                <br> 6. any unusual liquid (discharge) from either nipple
+                <br> 7. changes in size or shape of the breast</p>
+                <p class="text-justify">In order to improve breast cancer outcomes and survival, early detection is critical. There are two early detection strategies for breast cancer: early diagnosis and screening. Here is our <mark style="background-color: rgba(0, 136, 169,0.25);">breast cancer tumour type prediction algorithm</mark> for patients who are vulnerable to it:
+                </p>
+        </div>
+        <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+        <form action="{% url 'tumorvisual' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <!--<fieldset disabled>
+                    <label for="userID">UserID</label>
+                    <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
+                </fieldset>-->
+              </div>
+            <div class="form-group">
+              <label for="Name">Name</label>
+              <input type="text" class="form-control form-rounded" id="Name" aria-describedby="Help" placeholder="Enter Name" name="name" required>
+              <small id="Help" class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="Pregnancies">Radius_mean</label>
+                        <input type="number" class="form-control form-rounded" id="Pregnancies" placeholder="Radius_mean" name="pregnancies" min="0" max="40" step="0.01" required>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="Glucose">Texture_Mean</label>
+                        <input type="number" class="form-control form-rounded" id="Glucose" placeholder="Texture_Mean" name="glucose" min="0" max="40" step="0.01" required>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="BloodPressure">Perimeter_mean</label>
+                        <input type="number" class="form-control form-rounded" id="BloodPressure" placeholder="Perimeter_mean" name="bp" min="0" max="250" step="0.01" required>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="SkinThickness">Area_mean</label>
+                        <input type="number" class="form-control form-rounded" id="SkinThickness" placeholder="Area_mean" name="skinthickness" min="0" max="2500" step="0.1" required>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="Insulin">Smoothness_mean</label>
+                        <input type="number" class="form-control form-rounded" id="Insulin" placeholder="Smoothness_mean" name="insulin" min="0" max="2" step="0.0001" required>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="BMI">Compactness_mean</label>
+                        <input type="number" min="0" max="2" step="0.0001" class="form-control form-rounded" id="BMI" placeholder="Compactness_mean" name="bmi" required>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="DPF">Concavity_mean</label>
+                        <input type="number" min="0" max="2" step="0.0001" class="form-control form-rounded" id="DPF" placeholder="Concavity_mean" name="dpf" required>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="Age">Symmetry_mean</label>
+                        <input type="number" min="0" max="2" step="0.0001" class="form-control form-rounded" id="Age" placeholder="Symmetry_mean" name="age" required>
+                      </div>
+                </div>
+            </div>
+              <!--<div class="form-group">
+                <label for="CM">Classification Model</label>  
+                <select id="CM" class="custom-select form-rounded" name="model">
+                    <option selected><=====Select Classification Model=====></option>
+                    <option value="1">Logistic Regression</option>
+                    <option value="2">K-Nearest Neighbors</option>
+                    <option value="3">Support Vector Machine</option>
+                    <option value="4">Kernel SVM</option>
+                    <option value="5">Naive Bayes</option>
+                    <option value="6">Decision Tree Classification</option>
+                    <option value="7">Random Forest Classification</option>
+                  </select>
+              </div> -->           
+            <button type="submit" id="submitForm">Visualize</button>
+          </form>
+          </div>
+    </div>
+</div>
+
+{% endblock %}

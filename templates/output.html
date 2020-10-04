@@ -1,0 +1,160 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+    <div class="shadow-lg" style="width: 80%; margin: 0 auto; background-color: white; padding: 20px 0;">
+    <div class="container">
+        <h1><strong><a href="#" style="color: rgb(0, 136, 169);" class="h1">#</a>Results for {{ name }}</strong></h1>
+        <p class="text-muted h6">Published on March 31, 2020</p>
+        <br>
+        <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">
+                  <h4 class="card-title"><b>Logical Regression</b></h4>
+                  <h5 class="card-text">Output : {{ x37 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x1 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x10 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x19 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x28 }}%</h5>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">                  
+                  <h4 class="card-title"><b>SVM Polynomial</b></h4>
+                  <h5 class="card-text">Output : {{ x40 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x4 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x13 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x22 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x31 }}%</h5>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">
+                  <h4 class="card-title"><b>Naive Bayes</b></h4>
+                  <h5 class="card-text">Output : {{ x43 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x7 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x16 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x25 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x34 }}%</h5>
+                </div>
+            </div>
+        </div>
+       <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">
+                  <h4 class="card-title"><b>KNN Algorithm</b></h4>
+                  <h5 class="card-text">Output : {{ x38 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x2 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x11 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x20 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x29 }}%</h5>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">
+                  <h4 class="card-title"><b>SVM RBF</b></h4>
+                  <h5 class="card-text">Output : {{ x42 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x6 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x15 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x24 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x33 }}%</h5>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">
+                  <h4 class="card-title"><b>Decision Tree</b></h4>
+                  <h5 class="card-text">Output : {{ x44 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x8 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x17 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x26 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x35 }}%</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">
+                  <h4 class="card-title"><b>SVM Linear</b></h4>
+                  <h5 class="card-text">Output : {{ x39 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x3 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x12 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x21 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x30 }}%</h5>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">
+                  <h4 class="card-title"><b>SVM Sigmoid</b></h4>
+                  <h5 class="card-text">Output : {{ x41 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x5 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x14 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x23 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x32 }}%</h5>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 18rem; height: 18rem">
+                <div class="card-body">
+                  <h4 class="card-title"><b>Random Forest</b></h4>
+                  <h5 class="card-text">Output : {{ x45 }}</h5>
+                  <h5 class="card-text">Accuracy : {{ x9 }}%</h5>
+                  <h5 class="card-text">Precision :{{ x18 }}%</h5>
+                  <h5 class="card-text">Recall : {{ x27 }}%</h5>
+                  <h5 class="card-text">F1_Score : {{ x36 }}%</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <!--form>
+        	<div>     
+        	<br>
+            <button type="submit" id="submitForm" style="margin: center; margin-left: 43.5%">Go To Home Page</button>
+          	</div>
+         </form-->
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="color: wheat; background-color: rgba(0,136,169,0.20); margin-bottom: 30px;">
+                <div class="card-body">
+                  <h1 class="card-title text-success" style="color: #edf0f1; font-weight: bold;"><a href="#" style="color: rgb(0, 136, 169);" class="h1">#</a> {{ x49 }}{{ x47 }}%</h1>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="color: wheat; background-color: rgba(0,136,169,0.20); margin-bottom: 30px;">
+                <div class="card-body">
+                  <h1 class="card-title text-danger" style="color: #edf0f1; font-weight: bold;"><a href="#" style="color: rgb(0, 136, 169);" class="h1">#</a> {{ x50 }} {{ x48 }}%</h1>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="color: wheat; background-color: #24252A; margin-bottom: 30px;">
+                <div class="card-body">
+                  <h1 class="card-title" style="color: #edf0f1; font-weight: bold;"><a href="#" style="color: rgb(0, 136, 169);" class="h1">#</a> Is the Outcome of the Model Correct?</h1>
+                  <h6 class="card-subtitle mb-2 text-muted">**Help us improve Accuracy of the Model**</h6>
+                  </div></div>
+                    <form action="{% url 'expert' %}" method="POST" style="margin-left: 38%">
+                      {% csrf_token %}
+                        <div>
+                            <button type="submit"  style="display: inline; width: 120px;" name="response" value="YES">YES</button>
+                            <button type="submit"  style="display: inline; width: 120px;margin-left: 2%;" name="response" value="NO">NO</button>
+                        </div>
+                    </form>
+            
+              </div>
+        </div>
+    </div>
+</div>  
+{% endblock %}

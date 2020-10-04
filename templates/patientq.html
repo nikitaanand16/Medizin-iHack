@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+   
+    <!--form action="{% url 'patienta' %}">
+                <button type="submit" id="submitForm" style="margin-left: 78%">ANSWER PATIENTS</button>
+    </form-->
+    <br>
+   	<div class="container">
+   	<div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px; font-size: 20px;">
+        
+            
+                <!--<fieldset disabled>
+                    <label for="userID">UserID</label>
+                    <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
+                </fieldset>-->
+              
+            
+            {% if j %}
+            <h1 style="margin-left: 29%"><b>PATIENTS QUESTIONS</b></h1>
+           <h3 style="color:darkgreen; margin-bottom: 20px; margin-left: 20%">(YOUR ANSWER POSTED SUCCESSFULLY)</h3>
+            {% else %}
+           <h1 style="margin-left: 29%"><b>PATIENTS QUESTIONS</b></h1>
+            {% endif %}
+            {% for s in question %}
+            <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col-6">
+                    Name: {{ s.Name }}
+                </div>
+                <div class="col-6">
+                    Age: {{ s.Age }} years
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Sex: {{ s.Sex }}
+                </div>
+                <div class="col-6">
+                    Place: {{ s.Place }} 
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Email: {{ s.Email }}
+                </div>
+                <div class="col-6">
+                    Phone: {{ s.Phone }} 
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                Problem : {{ s.Problem }}
+                </div>
+            </div>
+            <br>
+            <form action="{% url 'patientq' %}"  method="POST">
+                {% csrf_token %}
+                <button name="subject" type="submit" style="width: 200px; height: 50px;" value="{{ s.Problem }}">ANSWER</button>
+            </form>
+            </div>
+            {% endfor %} 
+    <br>
+    <br>
+
+</div></div>
+{% endblock %}

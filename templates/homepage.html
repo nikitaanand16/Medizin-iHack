@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+<div class="shadow-lg" style="width: 80%; margin: 0 auto; padding: 0;">
+    <header class="heading" style="background-color: black">
+        <h1 style="font: bolder; font-size: 5rem; color: white;">Diagnosing Diseases with Computer Black Magic.<br>
+            <span>
+                <h3 style="margin: 25px 0;">Going Beyond ML Models |  Welcome you to Harry Creation<br>
+                    <!--button style="margin: 35px 0; background-color:#edf0f1; color: black;">Free Preview</button>
+                    <button style="margin: 35px 20px;">Register</button-->
+                </h3>
+            </span>
+        </h1>
+    </header>
+    <div id="here" style="background-color: #00001a; color: white;">
+        <h1><b>&emsp;&emsp;&emsp;&ensp;WE PROVIDE YOU AI EXPERT SERVICE TO DIAGNOSE DISEASE</b></h1>
+    </div>
+<div style="padding: 30px; background-color: rgba(0,136,169,0); margin-left: 4%;">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 23rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 25px;"><b>Diabetes in Women</b></h5>
+                  <h6 class="card-subtitle mb-2 text-muted" style=" font-size: 25px;">Provide Accurate Input</h6>
+                  <p class="card-text" style="font-size: 25px;">Click Below to diagnose diabetes in females using Machine Learning models</p>
+                  <button onclick="location.href='{% url 'dia' %}'" style="color: white; margin-left: 15%">Make Predictions</button>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 23rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 25px;"><b>Corona X-ray Scan</b></h5>
+                  <h6 class="card-subtitle mb-2 text-muted" style="font-size: 25px;">Provide Accurate Input</h6>
+                  <p class="card-text" style="font-size: 25px;">Click Below to diagnose COVID-19 from X-ray scan using Deep Learning model</p>
+                  <button onclick="location.href='#'" style="color: white; margin-left: 15%">Make Predictions</button>
+                </div>
+        </div>
+        </div>
+       <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 23rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 25px;"><b>Breast Cancer Tumour</b></h5>
+                  <h6 class="card-subtitle mb-2 text-muted" style="font-size: 25px;">Provide Accurate Input</h6>
+                  <p class="card-text" style="font-size: 25px;">Click Below to breast cancer tumour type in females using Machine Learning models</p>
+                  <button onclick="location.href='{% url 'tumor' %}'" style="color: white; margin-left: 15%">Make Predictions</button>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 23rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 25px;"><b>Brain MRI Scans</b></h5>
+                  <h6 class="card-subtitle mb-2 text-muted" style="font-size: 25px;">Provide Accurate Input</h6>
+                  <p class="card-text" style="font-size: 25px;">Click Below to diagnose Brain tumour from MRI Scans using Deep Learning model</p>
+                  <button onclick="location.href='#'" style="color: white; margin-left: 15%">Make Predictions</button>
+                </div>
+        </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="card" style="width: 23rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 25px;"><b>Heart Disease</b></h5>
+                  <h6 class="card-subtitle mb-2 text-muted" style="font-size: 25px;">Provide Accurate Input</h6>
+                  <p class="card-text" style="font-size: 25px;">Click Below to diagnose heart disease in patients using Machine Learning models</p>
+                   <button onclick="location.href='{% url 'hearts' %}'" style="color: white; margin-left: 15%">Make Predictions</button>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 23rem;">
+                <div class="card-body">
+                  <h4 class="card-title"><b>AI Diagnosiser for Other Diseases</b></h4>
+                  <img src="{% static 'cs.jpg' %}" style="width: 20rem;height: 13rem;">
+                  <br>
+                </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+{%endblock%}

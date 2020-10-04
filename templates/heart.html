@@ -1,0 +1,124 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+<div class="shadow-lg" style="width: 80%; margin: 0 auto; background-color: white; padding: 20px 0;">
+    <div class="container">
+        <h1><strong><a href="#" style="color: rgb(0, 136, 169);" class="h1">#</a> Heart Disease Early Signs and Symptoms</strong></h1>
+        <p class="text-muted h6">Published on March 31, 2020</p>
+        <hr class="my-4">
+        <div>
+                <p class="text-justify">Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems (arrhythmias); and heart defects you're born with (congenital heart defects), among others.Cardiovascular disease generally refers to conditions that involve narrowed or blocked blood vessels that can lead to a heart attack, chest pain (angina) or stroke.
+                    <div class="img-thumbnail bg-light" style="width: 400px; height: 100%; padding-bottom: 0; float: right; margin-left: 20px;">
+                        <a href="">
+                            <img src="https://www.nm.org//-/media/Northwestern/healthbeat/images/Health%20Library/nm-ten-signs-cardiologist_feature.jpg" alt="Nature" style="width:100%">
+                            <div class="caption">
+                              <p style="color: black; margin: 10px; font-size: 16px;" class="text-justify">“Do what you love, love what you do, and with all your heart give yourself to it.” ― Roy T. Bennett, The Light in the Heart</p>
+                            </div>
+                        </a>
+                    </div>
+                </p>
+                <p class="text-justify">
+                    According to the Centers for Disease Control and Prevention (CDC)Trusted Source, approximately every 40 seconds an American will have a heart attack. Every year, 805,000 Americans have a heart attack, 605,000 of them for the first time.
+                </p>
+
+                <p class="text-justify"><strong>Cardiovascular disease</strong> symptoms may be different for men and women. For instance, men are more likely to have chest pain; women are more likely to have other symptoms along with chest discomfort, such as shortness of breath, nausea and extreme fatigue.</p>
+                <p style="font-weight: normal;">
+                <b>Symptoms can include:</b>
+                <br>1. Chest pain, chest tightness, chest pressure and chest discomfort (angina)
+                <br>2. Shortness of breath
+                <br>3. Pain, numbness, weakness or coldness in your legs or arms if the blood vessels in those parts of your body are narrowed
+                <br>4. Pain in the neck, jaw, throat, upper abdomen or back</p>
+                <p class="text-justify">It's never too early to make healthy lifestyle changes, such as quitting smoking, eating healthy foods and becoming more physically active. These are primary lines of defense against heart disease and its complications.
+                    Here is our <mark style="background-color: rgba(0, 136, 169,0.25);">heart disease prediction algorithm</mark> for patients who are vulnerable to it:
+                </p>
+        </div>
+        <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+        <form action="{% url 'heartvisuals' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <!--<fieldset disabled>
+                    <label for="userID">UserID</label>
+                    <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
+                </fieldset>-->
+              </div>
+            <div class="form-group">
+              <label for="Name">Name</label>
+              <input type="text" class="form-control form-rounded" id="Name" aria-describedby="Help" placeholder="Enter Name" name="name" required>
+              <small id="Help" class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="Pregnancies">Age</label>
+                        <input type="number" class="form-control form-rounded" id="Pregnancies" placeholder="Enter Age" name="pregnancies" min="0" step="0.01" required>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="Glucose">Sex</label>
+                        <input type="number" class="form-control form-rounded" id="Glucose" placeholder="0-Male 1-Female" name="glucose" min="0" max="1" required>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="BloodPressure">Constrictive pericarditis</label>
+                        <input type="number" class="form-control form-rounded" id="BloodPressure" placeholder="cp" name="bp" min="0" max="250" step="0.01" required>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="SkinThickness">Resting Blood Pressure</label>
+                        <input type="number" class="form-control form-rounded" id="SkinThickness" placeholder="trestbps" name="skinthickness" min="0" max="2500" step="0.1" required>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="Insulin">Cholestrol</label>
+                        <input type="number" class="form-control form-rounded" id="Insulin" placeholder="chol" name="insulin" min="0" max="2" step="0.0001" required>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="BMI">Fasting Blood Sugar</label>
+                        <input type="number" min="0" max="2" step="0.0001" class="form-control form-rounded" id="BMI" placeholder="fbs" name="bmi" required>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="DPF">Rest ECG</label>
+                        <input type="number" min="0" max="2" step="0.0001" class="form-control form-rounded" id="DPF" placeholder="restecg" name="dpf" required>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="Age">Maximum heart rate</label>
+                        <input type="number" min="0" max="2" step="0.0001" class="form-control form-rounded" id="Age" placeholder="thalach" name="age" required>
+                      </div>
+                </div>
+            </div>
+              <!--<div class="form-group">
+                <label for="CM">Classification Model</label>  
+                <select id="CM" class="custom-select form-rounded" name="model">
+                    <option selected><=====Select Classification Model=====></option>
+                    <option value="1">Logistic Regression</option>
+                    <option value="2">K-Nearest Neighbors</option>
+                    <option value="3">Support Vector Machine</option>
+                    <option value="4">Kernel SVM</option>
+                    <option value="5">Naive Bayes</option>
+                    <option value="6">Decision Tree Classification</option>
+                    <option value="7">Random Forest Classification</option>
+                  </select>
+              </div> -->           
+            <button type="submit" id="submitForm">Visualize</button>
+          </form>
+          </div>
+    </div>
+</div>
+
+{% endblock %}

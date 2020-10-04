@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+   
+    <br>
+    <form action="{% url 'medical' %}">
+                <button type="submit" id="submitForm" style="width: 200px; height: 50px;margin-left: 68.5%">ASK DOCTORS</button>
+    </form>
+    <br>
+   	<div class="container">
+   	<div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;font-size: 20px;">
+        
+            
+                <!--<fieldset disabled>
+                    <label for="userID">UserID</label>
+                    <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
+                </fieldset>-->
+              
+             <h1 style="margin-left: 15%"><b>DOCTORS AVAILABLE FOR SERVICE</b></h1>
+            {% for s in doctor %}
+            <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col-6">
+                    Name: {{ s.Name }}
+                </div>
+                <div class="col-6">
+                    Age: {{ s.Age }} years
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Qualification: {{ s.Qualification }}
+                </div>
+                <div class="col-6">
+                    Years of Experience: {{ s.Experience }} years
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Gender: {{ s.Gender }}
+                </div>
+                <div class="col-6">
+                    Specialization: {{ s.Specialization }}
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Phone: {{ s.Phone }}
+                </div>
+                <div class="col-6">
+                    Email: {{ s.Email }}
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Available from: {{ s.From }}
+                </div>
+                <div class="col-6">
+                    Available till: {{ s.To }}
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Hospital: {{ s.Hospital }}
+                </div>
+                <div class="col-6">
+                    Hospital Address: {{ s.Address }}
+                </div>
+            </div>
+            <br>
+            </div>
+            {% endfor %} 
+    <br>
+    <br>
+
+</div></div>
+{% endblock %}

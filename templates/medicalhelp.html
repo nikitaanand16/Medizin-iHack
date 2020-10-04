@@ -1,0 +1,115 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+    <div class="container">
+    <br>
+    <div style="width: 1000px; margin-left: 50.2%">
+    <div style="float: left; width: 300px;"><form action="{% url 'doc' %}">
+                <button type="submit" id="submitForm" style="width: 250px; height: 50px;">VIEW DOCTORS</button>
+    </form>
+    </div>
+    <div style="float: left; width: 10px;">
+    <form action="{% url 'reply' %}">
+                <button type="submit" id="submitForm" style="width: 250px; height: 50px;">DOCTORS REPLY</button>
+    </form>
+    </div>
+    </div>
+    <br><br><br>
+    <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+    {% if j %}
+    <h1 style="margin-bottom: 20px; margin-left: 19%"><b>TELL US YOUR MEDICAL PROBLEM</b></h1>
+    <h3 style="color:darkgreen; margin-bottom: 20px; margin-left:2%; font-size: 22px">(YOUR QUESTION POSTED SUCCESSFULLY. CLICK DOCTORS REPLY TO SEE IF ANY DOCTOR REPLIED TO YOUR QUESTION)</h3>
+    {% else %}
+    <h1 style="margin-bottom: 20px; margin-left: 19%"><b>TELL US YOUR MEDICAL PROBLEM</b></h1>
+    {% endif %}
+
+    <div class="container">
+    <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;font-size: 20px;">
+    <form method="POST" action="{% url 'medical' %}">
+        <!--{% csrf_token %}-->
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="InputName">Full Name</label>
+          <input type="text" class="form-control form-rounded" id="InputName" aria-describedby="Help" required placeholder="Klaus Mikealson" name="name">
+          <small id="Help" class="form-text text-muted">We'll never share your details with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="InputAge">Age</label>
+          <input type="number" required class="form-control form-rounded" id="InputAge" placeholder="30" name="age">
+        </div>
+        <div class="form-group">
+            <label for="InputSex">Sex</label>
+            <select class="form-control form-rounded" placeholder="Gender" name="sex" id="Gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="InputCountry">Place</label>
+            <input type="text" class="form-control form-rounded" id="InputCountry" required placeholder="Delhi, India" name="country">
+        </div>  
+        <div class="form-group">
+            <label for="mail">E-mail</label>
+            <input type="mail" class="form-control form-rounded" id="mail" required placeholder="klaus@gmail.com" name="email">
+        </div>
+        <div class="form-group">
+            <label for="Phone">Phone</label>
+            <input type="number" class="form-control form-rounded" id="Phone" required placeholder="9478383847" name="phone">
+        </div>  
+        <div class="form-group">
+            <label for="Inputimage">Describe your problem clearly</label><br>
+            <textarea style="height: 150px;width:990px" type="text" id="Inputimage" name="question" required></textarea>
+            <br><br>
+            <button type="submit" id="submitForm" style="margin-left: 32%;width: 400px; height: 50px;">Post my Question to Doctors</button>
+        </div> 
+    </form>
+  </div>
+</div>
+        <!--<div class="row">
+            <div class="col-6">
+                <div class="card" style="width: 100%; text-align: center;">
+                    <div class="card-body">
+                      <h4 class="card-title">PREVIEW IMAGE</h4>
+                      <img src="" style="background-color: lightcoral; width: 500px; height: 500px;"></img>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-6">
+                <div class="card" style="width: 100%; text-align: center;">
+                    <div class="card-body">
+                      <h4 class="card-title">OUTPUT IMAGE</h4>
+                      <img id="myDIV2" src="" style="background-color: lightcoral; width: 500px; height: 500px;"></img>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </form>
+      <hr>
+      <div class="row" id="myDIV1" style="">
+          <div class="col-6">
+            <div class="card" style="width: 100%; text-align: center; background-color: rgba(0,255,100,0.25);">
+                <div class="card-body">
+                  <h4 class="card-title">FINDINGS</h4>
+                  <h2 class="text-success">Running..</h2>
+                </div>
+              </div>
+          </div>
+          <div class="col-6">
+            <div class="card" style="width: 100%; text-align: center; background-color: rgba(0,255,100,0.25);">
+                <div class="card-body">
+                  <h4 class="card-title">ACCURACY</h4>
+                  <h2 class="text-danger">Running...</h2>
+                </div>
+              </div>
+          </div>
+      </div>
+</div>-->
+    </div>
+  </div>
+  <style>
+    body{
+      overflow-x: hidden;
+    }
+  </style>
+{% endblock %}

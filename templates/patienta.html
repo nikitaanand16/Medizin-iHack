@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+   
+    <br>
+    <form action="{% url 'patientq' %}">
+                <button type="submit" id="submitForm" style="height: 50px; width:200px;margin-left: 68.7%">VIEW CASES</button>
+    </form>
+    <br>
+   	<div class="container">
+   	<div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+        
+            
+                <!--<fieldset disabled>
+                    <label for="userID">UserID</label>
+                    <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
+                </fieldset>-->
+              
+             <h1 style="margin-left: 37%"><b>MY ANSWERS</b></h1>
+            <br>
+    <div class="container">
+    <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px; font-size: 20px;">
+        <form action="{% url 'patienta' %}" method="POST">   
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control form-rounded" id="Name" placeholder="Name" name="Name">
+            </div>
+            
+            <div class="form-group">
+                <label for="Hospital">Hospital</label>
+                <input type="text" class="form-control form-rounded" id="Hospital" placeholder="Hospital" name="Hospital">
+            </div>
+
+            <div class="form-group">
+                <label for="Phone number">Phone number</label>
+                <input type="text" class="form-control form-rounded" id="Phone number" placeholder="Phone number" name="Phone">
+            </div>
+
+            <div class="form-group">
+                <label for="answer">Detailed Solution</label><br>
+                <textarea style="height: 150px;width:990px" type="text" id="" name="solution" required></textarea>
+            </div>
+               
+            <div class="form-group">
+                <label for="answer">Suggested Medicine</label><br>
+                <textarea style="height: 150px;width:990px" type="text" id="" name="medicine" required></textarea>
+            </div>
+            
+                
+                     
+            <button type="submit" style="width: 400px; height: 50px;" id="submitForm">POST ANSWER</button>
+          </form>
+          </div>
+    </div>
+</div>
+    <br>
+    <br>
+</div>
+    <br>
+    <br>
+
+</div></div>
+{% endblock %}

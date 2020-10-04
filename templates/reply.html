@@ -1,0 +1,68 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+   
+    <br>
+    <form action="{% url 'medical' %}">
+                <button type="submit" id="submitForm" style="width: 200px; height: 50px;margin-left: 69%">ASK DOCTORS</button>
+    </form>
+    <br>
+    <form action="{% url 'search' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group" style="margin-left:41.5%; width: 800px;">
+        <input type="text" style="float:left; width:500px;height: 50px;" class="form-control form-rounded" id="find" placeholder="Enter your Phone number" name="find" required>
+        <button type="submit" id="submitForm" style="width: 200px; height: 50px; margin-left: 3%">SEARCH</button>
+    </div>
+    </form>
+    <br>
+   	<div class="container">
+   	<div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+                     
+             <h1 style="margin-left: 30%"><b>DOCTORS ANSWERS</b></h1>
+            {% for s in answer %}
+            <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;font-size: 20px;">
+            <div class="row">
+                <div class="col-6">
+                    Doctor: {{ s.Name }}
+                </div>
+                <div class="col-6">
+                    Doctor's Phone: {{ s.Phone }} 
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Patient: {{ s.patientname }}
+                </div>
+                <div class="col-6">
+                    Patient's Phone: {{ s.patientnumber }} 
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-6">
+                    Hospital: {{ s.Hospital }}
+                </div>
+
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Problem: {{ s.Problem }}
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Answer: {{ s.Answer }}
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Medicine: {{ s.Medicine }}
+                </div>
+            </div> 
+            <br>
+            </div>
+            {% endfor %} 
+    <br>
+    
+</div></div>
+{% endblock %}
