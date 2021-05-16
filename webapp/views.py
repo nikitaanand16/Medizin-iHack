@@ -13,8 +13,6 @@ import time
 from static.heart import heartvisual
 from static.heartpredict import heart
 
-
-
 # Create your views here
 def index(request):
 	return render(request,'start.html')
@@ -30,6 +28,17 @@ def search(request):
 	a=str(request.POST.get('find'))
 	answer=Answers.objects.filter(patientnumber=a)
 	return render(request,'reply.html',{'answer' : answer})
+
+def patienthistory(request):
+	x=str(request.POST.get("subject"))
+	answer=Answers.objects.filter(patientnumber=x)
+	return render(request,'patient_history.html',{'answer' : answer})
+
+def inappropiate(request):
+	x=str(request.POST.get("subject"))
+	Questions.objects.filter(Problem=x).delete()
+	question=Questions.objects.all()
+	return render(request,'patientq.html',{'question' : question, 'j':False})
 
 def doc(request):
 	doctor=Doctors.objects.all()

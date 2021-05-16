@@ -2,18 +2,9 @@
 {% block content%}
 {% load static %}
    
-    <!--form action="{% url 'patienta' %}">
-                <button type="submit" id="submitForm" style="margin-left: 78%">ANSWER PATIENTS</button>
-    </form-->
     <br>
    	<div class="container">
    	<div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px; font-size: 20px;">
-        
-            
-                <!--<fieldset disabled>
-                    <label for="userID">UserID</label>
-                    <input type="text" class="form-control form-rounded" id="userID" placeholder="#UserID" name="userID" value="#DIA000">
-                </fieldset>-->
               
             
             {% if j %}
@@ -57,10 +48,31 @@
                 </div>
             </div>
             <br>
-            <form action="{% url 'patientq' %}"  method="POST">
+            <div class="form-inline">
+
+            <div>
+                <form action="{% url 'patientq' %}"  style="margin-left: 0%" method="POST">
                 {% csrf_token %}
-                <button name="subject" type="submit" style="width: 200px; height: 50px;" value="{{ s.Problem }}">ANSWER</button>
+                <button name="subject" type="submit" style="background-color:green;width: 325px; height: 50px;" value="{{ s.Problem }}">ANSWER PATIENT
+                QUERY</button>
+                </form>
+            </div>
+
+            <div style="margin-left: 2.5%">
+            <form action="{% url 'patienthistory' %}"  method="POST">
+                {% csrf_token %}
+                <button name="subject" type="submit" style="width: 325px; height: 50px;" value="{{ s.Phone }}">CHECK PATIENT HISTORY</button>
             </form>
+        </div>
+        <div>
+            <form action="{% url 'inappropiate' %}"  style="margin-left: 7%" method="POST">
+                {% csrf_token %}
+                <button name="subject" type="submit" style="width: 325px; height: 50px;background-color: red;" value="{{ s.Problem }}">INAPPROPIATE QUESTION</button>
+            </form>
+        </div>
+
+            </div>
+
             </div>
             {% endfor %} 
     <br>

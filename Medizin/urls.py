@@ -34,11 +34,14 @@ urlpatterns = [
     url(r'^blog/$',views.blog,name="blog"),
     url(r'^doc/$',views.doc,name="doc"),
     url(r'^patientq/$',views.patientq,name="patientq"),
+    url(r'^patienthistory/$',views.patienthistory,name="patienthistory"),
+    url(r'^inappropiate/$',views.inappropiate,name="inappropiate"),
     url(r'^patienta/$',views.patienta,name="patienta"),
     url(r'^reply/$',views.reply,name="reply"),
     url(r'^expert/$',views.expert,name="expert"),
     url(r'^find/$',views.find,name="find"),
     url(r'^search/$',views.search,name="search"),
     url(r'^heartvisuals/$',views.heartvisuals,name="heartvisuals"),
-     url(r'^hearts/$',views.hearts,name="hearts"),
+    url(r'^hearts/$',views.hearts,name="hearts"),
+    
 ]

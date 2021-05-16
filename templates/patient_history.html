@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% block content%}
+{% load static %}
+   
+    <br>
+   	<div class="container">
+   	<div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;">
+                     
+             <h1 style="margin-left: 30%"><b>PATIENT HISTORY</b></h1>
+            {% for s in answer %}
+            <div class="card shadow-sm" style="padding: 20px; margin-bottom: 30px;font-size: 20px;">
+            <div class="row">
+                <div class="col-6">
+                    Doctor: {{ s.Name }}
+                </div>
+                <div class="col-6">
+                    Doctor's Phone: {{ s.Phone }} 
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    Patient: {{ s.patientname }}
+                </div>
+                <div class="col-6">
+                    Patient's Phone: {{ s.patientnumber }} 
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-6">
+                    Hospital: {{ s.Hospital }}
+                </div>
+
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Problem: {{ s.Problem }}
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Answer: {{ s.Answer }}
+                </div>
+            </div> <br>
+            <div class="row">
+                <div class="col-6">
+                    Medicine: {{ s.Medicine }}
+                </div>
+            </div> 
+            <br>
+            </div>
+            {% endfor %} 
+    <br>
+    
+</div></div>
+{% endblock %}
